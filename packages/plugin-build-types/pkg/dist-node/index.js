@@ -90,7 +90,7 @@ To generate types automatically:
     }
 
     reporter.info('no manual type definitions found, auto-generating...');
-    await execa(tscBin, ['-d', '--allowJs', '--emitDeclarationOnly', '--declarationMap', 'false', '--project', tsConfigPath, '--declarationDir', path.join(out, 'dist-types/'), ...additionalArgs], {
+    await execa.node(tscBin, ['-d', '--allowJs', '--emitDeclarationOnly', '--declarationMap', 'false', '--project', tsConfigPath, '--declarationDir', path.join(out, 'dist-types/'), ...additionalArgs], {
       cwd
     });
   })();

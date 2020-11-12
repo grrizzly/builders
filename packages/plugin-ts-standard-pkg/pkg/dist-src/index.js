@@ -91,7 +91,7 @@ export function manifest(newManifest) {
 }
 export async function build({ cwd, out, options, reporter }) {
     const additionalArgs = options.args || [];
-    const result = execa(getTscBin(cwd), [
+    const result = execa.node(getTscBin(cwd), [
         '--outDir',
         path.join(out, 'dist-src/'),
         '-d',

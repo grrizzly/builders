@@ -61,7 +61,7 @@ To generate types automatically:
             return;
         }
         reporter.info('no manual type definitions found, auto-generating...');
-        await execa(tscBin, [
+        await execa.node(tscBin, [
             '-d',
             '--allowJs',
             '--emitDeclarationOnly',

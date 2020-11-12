@@ -136,7 +136,7 @@ async function build({
   reporter
 }) {
   const additionalArgs = options.args || [];
-  const result = execa(getTscBin(cwd), ['--outDir', path.join(out, 'dist-src/'), '-d', '--declarationDir', path.join(out, 'dist-types/'), '--project', getTsConfigPath(options, cwd), '--target', 'es2020', '--module', 'esnext', '--noEmit', 'false', '--sourceMap', 'false', ...additionalArgs], {
+  const result = execa.node(getTscBin(cwd), ['--outDir', path.join(out, 'dist-src/'), '-d', '--declarationDir', path.join(out, 'dist-types/'), '--project', getTsConfigPath(options, cwd), '--target', 'es2020', '--module', 'esnext', '--noEmit', 'false', '--sourceMap', 'false', ...additionalArgs], {
     cwd
   });
   result.stderr.pipe(process.stderr);
